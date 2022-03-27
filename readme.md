@@ -21,3 +21,8 @@ Fetches Twitch logs for a provided user and channel using https://logs.ivr.fi/
     spreadsheet software and create a chart.
 
     The mode can either be `messages` or `timeouts`. If not provided, the script will default to `messages`.
+
+## NOTE:
+
+This script uses a third party API to provide log data. The target channel must be logged on the API. You can view all
+available channels [here](https://logs.ivr.fi/).

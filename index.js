@@ -31,6 +31,9 @@ const months = [
 	'December',
 ];
 
+// the errorMax determines how many times we keep going if we get an error
+// instead of using a boolean, we use an integer that way if you have a few
+// months of inactivity (less than errorMax) we still get the data past that
 let errorMax = 10;
 
 const getMonthlyData = async (month, year) => {
