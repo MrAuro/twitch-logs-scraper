@@ -1,6 +1,6 @@
 # twitch-logs-scraper
 
-Fetches Twitch logs for a provided user and channel using https://logs.ivr.fi/
+Fetches the amount of lines sent or the amount of timeouts for a provided user and channel using https://logs.ivr.fi/
 
 ## How to use
 
