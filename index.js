@@ -70,16 +70,17 @@ let month = date.getMonth() + 1;
 		}
 	}
 
-	const csv = [...fetchedData]
-		.map(([key, value]) => {
-			const monthString = months[key.split(' ')[1] - 1];
-			return `${monthString} ${key.split(' ')[0]},${value}`;
-		})
-		.join('\n');
-	fs.writeFileSync(`${user}-${channel}.csv`, csv);
+	save();
+	process.exit(0);
 })();
 
 process.on('SIGINT', () => {
+	save();
+	process.exit(0);
+});
+
+function save() {
+	console.log('saving data');
 	const csv = [...fetchedData]
 		.map(([key, value]) => {
 			const monthString = months[key.split(' ')[1] - 1];
@@ -87,5 +88,5 @@ process.on('SIGINT', () => {
 		})
 		.join('\n');
 	fs.writeFileSync(`${user}-${channel}.csv`, csv);
-	process.exit(0);
-});
+	console.log(`data saved to ${user}-${channel}.csv`);
+}
